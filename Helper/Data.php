@@ -23,7 +23,7 @@ class Data extends AbstractHelper
 
     const XML_PATH_INTERNATIONAL_TELEPHONE_MULTISELECT_COUNTRIES_ALLOWED = 'internationaltelephoneinput/general/allow';
 
-    const XML_PATH_PREFERED_COUNTRY = 'general/store_information/country_id';  
+    const XML_PATH_PREFERED_COUNTRY = 'internationaltelephoneinput/general/preferedCountry';
     
     /**
      * @var StoreManagerInterface
@@ -104,7 +104,8 @@ class Data extends AbstractHelper
             'validation' => [
                 "required-entry"    => true,
                 "max_text_length"   => 255,
-                "min_text_length"   => 1
+                "min_text_length"   => 1,
+                'validate-phone-number' => true
             ],
             'options' => [],
             'filterBy' => null,
