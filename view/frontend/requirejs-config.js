@@ -12,5 +12,11 @@ var config = {
         'internationalTelephoneInput': {
             'deps':['jquery', 'intlTelInput']
         }
+    },
+    config: {
+        mixins: {
+            'Magento_Ui/js/lib/validation/validator': {
+                'MaxMage_InternationalTelephoneInput/js/phoneValidator': true
+        }
     }
 };
