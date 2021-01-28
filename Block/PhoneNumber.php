@@ -61,9 +61,12 @@ class PhoneNumber extends Template
     {
         $config  = [
             "nationalMode" => false,
-            "utilsScript"  => $this->getViewFileUrl('MaxMage_InternationalTelephoneInput::js/utils.js'),
-            "preferredCountries" => [$this->helper->preferedCountry()]
+            "utilsScript"  => $this->getViewFileUrl('MaxMage_InternationalTelephoneInput::js/utils.js')
         ];
+        
+        if ($this->helper->preferedCountry()) {
+            $config["preferredCountries"] = [$this->helper->preferedCountry()];
+        }
 
         if ($this->helper->allowedCountries()) {
             $config["onlyCountries"] = explode(",", $this->helper->allowedCountries());
